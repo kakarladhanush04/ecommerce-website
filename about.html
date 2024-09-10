@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="kdFashionsApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KD Fashions - About Us</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    
+</head>
+<body>
+<style>
+    /* Your CSS styles for the About page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.about-content {
+    max-width: 600px;
+    font-size: larger;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+</style>
+<div ng-controller="AboutController as aboutCtrl">
+    <header>
+        <img src="img/logo.jpg" alt="KD Fashions Logo" style="width: 150px; height: auto;">
+        <h1>About Us</h1>
+    </header>
+
+    <main>
+        <div class="about-content">
+            <p>{{ aboutCtrl.aboutInfo }}</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 KD Fashions. All rights reserved.</p>
+    </footer>
+</div>
+
+<script >
+    angular.module('kdFashionsApp', [])
+    .controller('AboutController', function() {
+        var vm = this;
+
+        // Sample about information
+        vm.aboutInfo = " KD Fashions is your one-stop shop for trendy and affordable fashion. We offer a wide range of clothing, shoes, and accessories for men, women, and kids. Our mission is to provide our customers with high-quality products and exceptional shopping experience. Shop with us and stay ahead of the fashion curve!";
+    });
+
+</script>
+</body>
+</html>

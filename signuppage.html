@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="signupstyle.css">
+   </head>
+<body>
+  <div class="image">
+    <img src="./img/logo.jpg">
+ </div>
+    <script>
+        function validate(){
+            let username = document.forms["signup"]["username"].value;
+            let regex = /^(?=.*[a-zA-Z])[a-zA-Z0-9!@#$%^&*]+$/;
+            if (!regex.test(username)){
+                alert("username should include letters");
+                return false;}
+            let pass = document.forms["signup"];
+            if (pass["password"].value!==pass["cpassword"].value){
+                alert("Password and Confirm password are not same!!");
+                return false; }
+            return true;}
+    </script>
+  <div class="wrapper">
+    <h2>Registration</h2>
+    <form method="POST" onsubmit="return validate()" action="./sam.php" name="signup" >
+      <div class="input-box">
+        <input type="text" placeholder="username" name="username" required>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Create password" name="password" id="password" required>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Confirm password" name="cpassword" id="cpassword" required>
+      </div>
+      <div class="input-box button">
+        <input type="Submit" value="Register Now" name="signup">
+      </div>
+      <div class="text">
+        <h3>Already have an account? <a href="./pro.html">Login now</a></h3>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
